@@ -10,9 +10,9 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfColorDal : EfEntityRepositoryBase<Color, CarRentingContext>, IColorDal
+    public class EfUserDal : EfEntityRepositoryBase<User, CarRentingContext>, IUserDal
     {
-        public void Add(Color entity)
+        public void Add(User entity)
         {
             // IDisposable pattern impl. of C#
             using (CarRentingContext context = new CarRentingContext())
@@ -23,7 +23,7 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public void Delete(Color entity)
+        public void Delete(User entity)
         {
             using (CarRentingContext context = new CarRentingContext())
             {
@@ -33,14 +33,14 @@ namespace DataAccess.Concrete.EntityFramework
             }
         }
 
-        public Color Get(Expression<Func<Color, bool>> filter)
+        public User Get(Expression<Func<User, bool>> filter)
         {
             using (CarRentingContext context = new CarRentingContext())
             {
-                return context.Set<Color>().SingleOrDefault(filter);
+                return context.Set<User>().SingleOrDefault(filter);
             }
         }
-        public void Update(Color entity)
+        public void Update(User entity)
         {
             using (CarRentingContext context = new CarRentingContext())
             {
@@ -49,13 +49,13 @@ namespace DataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
-        public List<Color> GetAll(Expression<Func<Color, bool>> filter = null)
+        public List<User> GetAll(Expression<Func<User, bool>> filter = null)
         {
             using (CarRentingContext context = new CarRentingContext())
             {
                 return filter == null
-                    ? context.Set<Color>().ToList()
-                    : context.Set<Color>().Where(filter).ToList();
+                    ? context.Set<User>().ToList()
+                    : context.Set<User>().Where(filter).ToList();
             }
         }
     }

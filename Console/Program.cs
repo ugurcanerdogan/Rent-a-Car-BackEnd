@@ -1,5 +1,6 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,13 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //CarDTO();
-
+            //CustomerDTO();
+            RentalDTO();
             //CarTest();
             //BrandTest();
             //ColorTest();
+            //UserTest();
+            //CustomerTest();
         }
 
         private static void CarDTO()
@@ -32,6 +36,46 @@ namespace ConsoleUI
                     "\n----------------------------------------");
             }
             Console.WriteLine(carManager.GetCarDetails().Message);
+        }
+        private static void CustomerDTO()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            List<CustomerDetailDto> listDto = customerManager.GetCustomerDetails().Data;
+
+            foreach (var customer in listDto)
+            {
+                Console.WriteLine(" Müşteri ismi : " + customer.FirstName +
+                    "\n Müşteri soyismi : " + customer.LastName +
+                    "\n Müşteri e-mail : " + customer.Email +
+                    "\n Müşteri şifresi : " + customer.Password +
+                    "\n Müşteri ID : " + customer.CustomerId +
+                    "\n Müşteri kullanıcı ID : " + customer.UserId +
+                    "\n Müşteri şirket ismi : " + customer.CompanyName +
+                    "\n----------------------------------------");
+            }
+            Console.WriteLine(customerManager.GetCustomerDetails().Message);
+        }
+        private static void RentalDTO()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            List<RentalDetailDto> listDto = rentalManager.GetRentalDetails().Data;
+
+            foreach (var rental in listDto)
+            {
+                Console.WriteLine(" Kira ID : " + rental.RentalId +
+                    "\n Kiralanan arabanın ID : " + rental.CarId +
+                    "\n Kiracının müşteri ID : " + rental.CustomerId +
+                    "\n Kiralanan arabanın ismi : " + rental.CarName +
+                    "\n Kiracının şirket ismi : " + rental.CompanyName +
+                    "\n Kiracının ismi : " + rental.FirstName +
+                    "\n Kiracının soyismi : " + rental.LastName +
+                    "\n Kiralanan arabanın markası : " + rental.Brand +
+                    "\n Kiralanan arabanın rengi : " + rental.Color +
+                    "\n Kiralanan arabanın kira tarihi : " + rental.RentDate +
+                    "\n Kiralanan arabanın iade tarihi : " + rental.ReturnDate +
+                    "\n----------------------------------------");
+            }
+            Console.WriteLine(rentalManager.GetRentalDetails().Message);
         }
 
         private static void CarTest()
@@ -84,6 +128,40 @@ namespace ConsoleUI
             }
             Console.WriteLine(colorManager.GetAll().Message);
 
+        }
+        private static void UserTest()
+        {
+            Console.WriteLine("---User List---");
+
+            UserManager userManager = new UserManager(new EfUserDal());
+            var result = userManager.GetAll();
+
+            foreach (var user in result.Data)
+            {
+                Console.WriteLine(" Kullanıcı adı : " + user.FirstName +
+                "\n Kullanıcı soyadı :  " + user.LastName +
+                "\n Kullanıcı ID :  " + user.Id +
+                "\n Kullanıcı e-mail :  " + user.Email +
+                "\n Kullanıcı şifresi :  " + user.Password +
+                "\n----------------------------------------");
+            }
+            Console.WriteLine(userManager.GetAll().Message);
+        }
+        private static void CustomerTest()
+        {
+            Console.WriteLine("---Customer List---");
+
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            var result = customerManager.GetAll();
+
+            foreach (var customer in result.Data)
+            {
+                Console.WriteLine(" Müşteri ID : " + customer.CustomerId +
+                "\n Müşteri şirket adı :  " + customer.CompanyName +
+                "\n Müşteri kullanıcı ID :  " + customer.UserId +
+                "\n----------------------------------------");
+            }
+            Console.WriteLine(customerManager.GetAll().Message);
         }
     }
 }
