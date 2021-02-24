@@ -21,14 +21,15 @@
 - GetCarsByBrandId, GetCarsByColorId services added.
 
 ### Commit :triangular_flag_on_post:
-- **Core** layer was Integrated into the system.
+- **Core** layer was integrated into the system.
 - **DTO** structure added.
 - Entityframework infrastructure and IEntity part moved to Core layer.
 
 ### Commit :triangular_flag_on_post:
 - **Result** configurations added.
 - System Messages called **Constants** were integrated and the project was made compatible.
-
+- Rental, Customer,User entities added. Their infrastructure was integrated.
+- Additional DTOs were added.
 
 ------------
 
