@@ -84,43 +84,16 @@ namespace DataAccess.Concrete.EntityFramework
                 return context.Set<Rental>().SingleOrDefault(filter);
             }
         }
-        public RentalDetailDto GetRentalDetailsByCarId(int id)
+        public List<Rental> GetAll(Expression<Func<Rental, bool>> filter = null)
         {
             using (CarRentingContext context = new CarRentingContext())
             {
-                var result = (from r in context.Rentals
-                              join c in context.Cars
-                              on r.CarId equals c.CarId
-                              join m in context.Customers
-                              on r.CustomerId equals m.CustomerId
-                              join u in context.Users
-                              on m.UserId equals u.Id
-                              join b in context.Brands
-                              on c.BrandId equals b.BrandId
-                              join co in context.Colors
-                              on c.ColorId equals co.ColorId
-                              where r.CarId == id
-                              orderby r.RentalId ascending
-                              select new RentalDetailDto
-                              {
-                                  RentalId = r.RentalId,
-                                  CarId = c.CarId,
-                                  CustomerId = m.CustomerId,
-                                  CarName = c.CarName,
-                                  FirstName = u.FirstName,
-                                  LastName = u.LastName,
-                                  RentDate = (DateTime)r.RentDate,
-                                  ReturnDate = (DateTime)r.ReturnDate,
-                                  CompanyName = m.CompanyName,
-                                  Brand = b.BrandName,
-                                  Color = co.ColorName
-
-                              }).LastOrDefault();
-
-
-                return result;
+                return filter == null
+                    ? context.Set<Rental>().ToList()
+                    : context.Set<Rental>().Where(filter).ToList();
             }
         }
+
         public bool IsAvailable(int id)
         {
             using (CarRentingContext context = new CarRentingContext())

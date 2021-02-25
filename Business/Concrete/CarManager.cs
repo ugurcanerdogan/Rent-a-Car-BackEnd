@@ -18,7 +18,10 @@ namespace Business.Concrete
         {
             _carDal = carDal;
         }
-
+        public IDataResult<Car> GetById(int carId)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(c => c.CarId == carId));
+        }
         public IResult Add(Car car)
         {
 

@@ -13,53 +13,53 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfCustomerDal : EfEntityRepositoryBase<Customer, CarRentingContext>, ICustomerDal
     {
-        //public void Add(Customer entity)
-        //{
-        //    // IDisposable pattern impl. of C#
-        //    using (CarRentingContext context = new CarRentingContext())
-        //    {
-        //        var addedEntity = context.Entry(entity);
-        //        addedEntity.State = EntityState.Added;
-        //        context.SaveChanges();
-        //    }
-        //}
+        public void Add(Customer entity)
+        {
+            // IDisposable pattern impl. of C#
+            using (CarRentingContext context = new CarRentingContext())
+            {
+                var addedEntity = context.Entry(entity);
+                addedEntity.State = EntityState.Added;
+                context.SaveChanges();
+            }
+        }
 
-        //public void Delete(Customer entity)
-        //{
-        //    using (CarRentingContext context = new CarRentingContext())
-        //    {
-        //        var deletedEntity = context.Entry(entity);
-        //        deletedEntity.State = EntityState.Deleted;
-        //        context.SaveChanges();
-        //    }
-        //}
-        //public void Update(Customer entity)
-        //{
-        //    using (CarRentingContext context = new CarRentingContext())
-        //    {
-        //        var updatedEntity = context.Entry(entity);
-        //        updatedEntity.State = EntityState.Modified;
-        //        context.SaveChanges();
-        //    }
-        //}
+        public void Delete(Customer entity)
+        {
+            using (CarRentingContext context = new CarRentingContext())
+            {
+                var deletedEntity = context.Entry(entity);
+                deletedEntity.State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+        }
+        public void Update(Customer entity)
+        {
+            using (CarRentingContext context = new CarRentingContext())
+            {
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
 
-        //public Customer Get(Expression<Func<Customer, bool>> filter)
-        //{
-        //    using (CarRentingContext context = new CarRentingContext())
-        //    {
-        //        return context.Set<Customer>().SingleOrDefault(filter);
-        //    }
-        //}
+        public Customer Get(Expression<Func<Customer, bool>> filter)
+        {
+            using (CarRentingContext context = new CarRentingContext())
+            {
+                return context.Set<Customer>().SingleOrDefault(filter);
+            }
+        }
 
-        //public List<Customer> GetAll(Expression<Func<Customer, bool>> filter = null)
-        //{
-        //    using (CarRentingContext context = new CarRentingContext())
-        //    {
-        //        return filter == null
-        //            ? context.Set<Customer>().ToList()
-        //            : context.Set<Customer>().Where(filter).ToList();
-        //    }
-        //}
+        public List<Customer> GetAll(Expression<Func<Customer, bool>> filter = null)
+        {
+            using (CarRentingContext context = new CarRentingContext())
+            {
+                return filter == null
+                    ? context.Set<Customer>().ToList()
+                    : context.Set<Customer>().Where(filter).ToList();
+            }
+        }
         public List<CustomerDetailDto> GetCustomerDetails()
 
         {

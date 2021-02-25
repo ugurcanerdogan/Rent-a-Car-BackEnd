@@ -23,7 +23,6 @@ namespace DataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
-
         public void Delete(Car entity)
         {
             using (CarRentingContext context = new CarRentingContext())
@@ -33,7 +32,15 @@ namespace DataAccess.Concrete.EntityFramework
                 context.SaveChanges();
             }
         }
-
+        public void Update(Car entity)
+        {
+            using (CarRentingContext context = new CarRentingContext())
+            {
+                var updatedEntity = context.Entry(entity);
+                updatedEntity.State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
         public Car Get(Expression<Func<Car, bool>> filter)
         {
             using (CarRentingContext context = new CarRentingContext())
@@ -41,7 +48,6 @@ namespace DataAccess.Concrete.EntityFramework
                 return context.Set<Car>().SingleOrDefault(filter);
             }
         }
-
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
             using (CarRentingContext context = new CarRentingContext())
@@ -51,7 +57,6 @@ namespace DataAccess.Concrete.EntityFramework
                     : context.Set<Car>().Where(filter).ToList();
             }
         }
-
         public List<CarDetailDto> GetCarDetails()
         {
             using (CarRentingContext context = new CarRentingContext())
@@ -72,16 +77,6 @@ namespace DataAccess.Concrete.EntityFramework
                              };
                 return result.ToList();
 
-            }
-        }
-
-        public void Update(Car entity)
-        {
-            using (CarRentingContext context = new CarRentingContext())
-            {
-                var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Modified;
-                context.SaveChanges();
             }
         }
     }

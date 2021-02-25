@@ -34,15 +34,15 @@ namespace Business.Concrete
 
         }
 
-        public IDataResult<Customer> GetById(int id)
+        public IDataResult<Customer> GetById(int customerid)
         {
-            var result = _customerDal.Get(c => c.UserId== id);
+            var result = _customerDal.Get(c => c.CustomerId== customerid);
             return new SuccessDataResult<Customer>(result, Messages.CustomerListed);
         }
 
-        public IDataResult<Customer> GetCustomersById(int id)
+        public IDataResult<Customer> GetCustomersByUserId(int id)
         {
-            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.UserId== id));
+            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.UserId == id));
         }
 
         public IResult Update(Customer customer)
