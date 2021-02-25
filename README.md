@@ -30,6 +30,8 @@
 - System Messages called **Constants** were integrated and the project was made compatible.
 - Rental, Customer,User entities added. Their infrastructure was integrated.
 - Additional DTOs were added.
+- **WebAPI** layer was established. API equivalent of all services in *business* layer was added.
+- Tested on **POSTMAN**.
 
 ------------
 
