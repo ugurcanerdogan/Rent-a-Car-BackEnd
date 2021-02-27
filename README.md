@@ -1,7 +1,16 @@
 # :car:  Rent A Car Project
+<p align="center">
+	<img width="100%" src="./imgs/Intro.png"></img>
+</p>
 
 ## :boom: Introduction
 - **It is a Car Rental Console project from Entities, DataAccess, Business and Console layers. The project from the Car, Brand, Color tables and their operations will enrich with the front-end over time.**
+
+
+<p align="center">
+	<img width="100%" src="./imgs/Layers.png"></img>
+</p>
+
 
 ## 	:hammer_and_wrench:  Major Changes
 
@@ -30,12 +39,22 @@
 - System Messages called **Constants** were integrated and the project was made compatible.
 - Rental, Customer,User entities added. Their infrastructure was integrated.
 - Additional DTOs were added.
+- **WebAPI** layer was established. API equivalent of all services in *business* layer was added.
+- Tested on **POSTMAN**. 
+
+### Commit :triangular_flag_on_post:
+- The missing layer **CORE** was added.
+- **Form applications** layer was added. Various business rules have been coded.
+- Readme has been updated with visuals. 
+
+<p align="center">
+	<img width="100%" src="./imgs/FormApp.png"></img>
+</p>
 
 ------------
-
 ###  :gear: USED TOOLS
 
-<a href=''><img src='https://www.ranna.com.tr/static/media/c_sharp.afa245f5.svg' width='80' height='80'></a><a href=''><img src='http://binaryworld.net/blogs/wp-content/uploads/2013/11/LINQ.png' width='80' height='80'></a> <a href=''><img src='http://upload.turkcewiki.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/1200px-Visual_Studio_Icon_2019.svg.png' width='80' height='80'></a><a href=''> <img src='https://omereryilmaz.files.wordpress.com/2014/03/sqlserver_logo.jpg' width='70' height='70'></a> <a href=''> <img src='https://swellcom.com/content/wp-content/uploads/2017/09/api.png' width='100' height='70'></a> <a href=''><img src='https://miro.medium.com/max/512/0*zUlSG8EuHsKS-gdm.png' width='80' height='80'></a>
+<a href=''><img src='https://www.ranna.com.tr/static/media/c_sharp.afa245f5.svg' width='80' height='80'></a><a href=''><img src='http://binaryworld.net/blogs/wp-content/uploads/2013/11/LINQ.png' width='80' height='80'></a> <a href=''><img src='http://upload.turkcewiki.org/wikipedia/commons/thumb/5/59/Visual_Studio_Icon_2019.svg/1200px-Visual_Studio_Icon_2019.svg.png' width='80' height='80'></a><a href=''> <img src='https://omereryilmaz.files.wordpress.com/2014/03/sqlserver_logo.jpg' width='70' height='70'></a> <a href=''><img src='https://miro.medium.com/max/512/0*zUlSG8EuHsKS-gdm.png' width='80' height='80'></a>
 
 ------------
 
