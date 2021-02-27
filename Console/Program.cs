@@ -11,9 +11,9 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            //CarDTO();
+            CarDTO();
             //CustomerDTO();
-            RentalDTO();
+            //RentalDTO();
             //CarTest();
             //BrandTest();
             //ColorTest();
