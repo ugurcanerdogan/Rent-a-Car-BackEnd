@@ -65,3 +65,4 @@
 ------------
 
 ###### :black_nib: : Uğurcan ERDOĞAN
+###### ✅ License : GNU
