@@ -39,5 +39,8 @@ namespace Business.Constants
         public static string CustomerListed = "Müşteri listelendi.";
         public static string CustomerUpdated = "Müşteri güncellendi.";
         public static string CustomersListed = "Müşteriler listelendi.";
+
+        public static string CarDailyPriceMinimumError = "Araba fiyatı 0'dan küçük girilemez!";
+        public static string CarNameLengthError = "Araba ismi en az üç karakter girilmelidir!";
     }
 }

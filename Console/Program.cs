@@ -11,7 +11,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            CarDTO();
+            //CarDTO();
             //CustomerDTO();
             //RentalDTO();
             //CarTest();
@@ -73,7 +73,7 @@ namespace ConsoleUI
                     "\n Kiralanan arabanın rengi : " + rental.Color +
                     "\n Kiralanan arabanın kira tarihi : " + rental.RentDate +
                     "\n Kiralanan arabanın iade tarihi : " + rental.ReturnDate +
-                    "\n----------------------------------------");
+                    "\n--------------------------------------------------");
             }
             Console.WriteLine(rentalManager.GetRentalDetails().Message);
         }
