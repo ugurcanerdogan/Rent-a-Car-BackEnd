@@ -25,7 +25,7 @@ namespace Core.Utilities.Business.FileManager
             }
             using (FileStream fileStream = File.Create(directory + path + newFileName))
             {
-                file.CopyToAsync(fileStream);
+                file.CopyTo(fileStream);
                 fileStream.Flush();
             }
             return (path + newFileName).Replace("\\", "/");
