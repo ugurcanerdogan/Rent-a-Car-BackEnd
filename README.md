@@ -46,6 +46,7 @@
 - The missing layer **CORE** was added.
 - **Form applications** layer was added. Various business rules have been coded.
 - Readme has been updated with visuals. 
+- *FileHelper* added. Now we can add **Car Images** at most 5 per each car. 
 
 <p align="center">
 	<img width="100%" src="./imgs/FormApp.png"></img>
