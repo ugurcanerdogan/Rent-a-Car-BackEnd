@@ -48,6 +48,8 @@
 - Readme has been updated with visuals. 
 - *FileHelper* added. Now we can add **Car Images** at most 5 per each car. 
 - *JWT* integrated. Authorization aspects added. Validation rules updated.
+- Cache,Transaction,Performance Aspects added. Request bugs fixed. Dependency Inj. updated.
+
 
 <p align="center">
 	<img width="100%" src="./imgs/FormApp.png"></img>
