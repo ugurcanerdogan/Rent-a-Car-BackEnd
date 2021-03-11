@@ -1,6 +1,5 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
-using Entities.Concrete;
 using Entities.DTOs;
 using System;
 using System.Collections.Generic;
@@ -142,7 +141,7 @@ namespace ConsoleUI
                 "\n Kullanıcı soyadı :  " + user.LastName +
                 "\n Kullanıcı ID :  " + user.Id +
                 "\n Kullanıcı e-mail :  " + user.Email +
-                "\n Kullanıcı şifresi :  " + user.Password +
+                "\n Kullanıcı şifresi :  " + user.PasswordHash + user.PasswordSalt +
                 "\n----------------------------------------");
             }
             Console.WriteLine(userManager.GetAll().Message);

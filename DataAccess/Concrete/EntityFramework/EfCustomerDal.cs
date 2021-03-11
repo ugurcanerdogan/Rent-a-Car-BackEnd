@@ -73,7 +73,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  FirstName = k.FirstName,
                                  LastName = k.LastName,
                                  Email = k.Email,
-                                 Password = k.Password,
+                                 Password = k.PasswordHash.ToString() + k.PasswordSalt.ToString(),
                                  CustomerId = m.CustomerId,
                                  CompanyName = m.CompanyName,
                                  UserId = k.Id
