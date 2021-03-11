@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -15,7 +14,7 @@ namespace DataAccess.Concrete.InMemory
 
         public InMemoryCarDal()
         {
-            _cars = new List<Car> 
+            _cars = new List<Car>
             {
                 new Car{CarId=1, BrandId=1, ColorId=3,DailyPrice=200,ModelYear="2019",Description="Passat" },
                 new Car{CarId=2, BrandId=1, ColorId=5,DailyPrice=300,ModelYear="2021",Description="Arteon" },

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Core.Utilities.Results
+﻿namespace Core.Utilities.Results
 {
-    public class DataResult<T>:Result, IDataResult<T>
+    public class DataResult<T> : Result, IDataResult<T>
     {
         public T Data { get; }
 

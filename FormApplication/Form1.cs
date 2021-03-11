@@ -3,12 +3,6 @@ using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FormApplication
@@ -42,7 +36,7 @@ namespace FormApplication
         }
         private void addcarbutton_Click(object sender, EventArgs e)
         {
-            if  (string.IsNullOrEmpty(addcarnamebox.Text) 
+            if (string.IsNullOrEmpty(addcarnamebox.Text)
                 || string.IsNullOrEmpty(addcarbrandidbox.Text)
                 || string.IsNullOrEmpty(addcarcoloridbox.Text)
                 || string.IsNullOrEmpty(addcardailypricebox.Text)
@@ -51,7 +45,8 @@ namespace FormApplication
                 string message = String.Format("Car couldn't added ! \n --YOU MUST FILL ALL THE BOXES--");
                 MessageBox.Show(message, "ADD OPERATION ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else { 
+            else
+            {
                 var result = _carManager.Add(new Car
                 {
                     CarName = addcarnamebox.Text,
@@ -170,7 +165,7 @@ namespace FormApplication
                 string message = String.Format("CAR ID MUST BE ENTERED !");
                 MessageBox.Show(message, "DELETE OPERATION ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
             LoadGrids();
             updatecaridbox.Text = String.Empty;
             updatecarnamebox.Text = String.Empty;
@@ -235,7 +230,7 @@ namespace FormApplication
         private void updatebrandbutton_Click(object sender, EventArgs e)
         {
             if (!(string.IsNullOrEmpty(updatebrandidbox.Text) || string.IsNullOrEmpty(updatebrandnamebox.Text)))
-                { 
+            {
                 int id = Convert.ToInt32(updatebrandidbox.Text);
                 Brand brandToUpdate = _brandManager.GetById(id).Data;
                 string oldName = brandToUpdate.BrandName;
